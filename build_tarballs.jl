@@ -45,7 +45,8 @@ platforms = [
 
 # The products that we will ensure are always built
 products(prefix) = [
-    LibraryProduct(prefix, "nasm", :nasm)
+    ExecutableProduct(prefix, "ndisasm", :ndisasm),
+    ExecutableProduct(prefix, "nasm", :nasm)
 ]
 
 # Dependencies that must be installed before this package can be built
