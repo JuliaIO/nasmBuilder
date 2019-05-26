@@ -8,7 +8,7 @@ version = v"2.14.02"
 # Collection of sources required to build x264Builder
 sources = [
     "http://www.nasm.us/pub/nasm/releasebuilds/2.14.02/nasm-2.14.02.tar.xz" =>
-    "638581a18bff8e9375211955422eff145011c8ccfd0994d43bd194cd82984f7a",
+    "e24ade3e928f7253aa8c14aa44726d1edf3f98643f87c9d72ec1df44b26be8f5",
 
 ]
 
