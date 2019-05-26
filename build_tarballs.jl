@@ -2,24 +2,22 @@
 # `julia build_tarballs.jl --help` to see a usage message.
 using BinaryBuilder
 
-name = "x264Builder"
-version = v"2019.05.25-noyasm"
+name = "nasmBuilder"
+version = v"nasm-2.14.02"
 
 # Collection of sources required to build x264Builder
 sources = [
-    "https://download.videolan.org/pub/videolan/x264/snapshots/x264-snapshot-20190525-2245-stable.tar.bz2" =>
+    "http://www.nasm.us/pub/nasm/releasebuilds/2.14.02/nasm-2.14.02.tar.xz" =>
     "638581a18bff8e9375211955422eff145011c8ccfd0994d43bd194cd82984f7a",
 
 ]
 
 # Bash recipe for building across all platforms
 script = raw"""
-cd $WORKSPACE/srcdir
-cd x264-snapshot-20190525-2245-stable/
-./configure --prefix=$prefix --host=$target --enable-shared --disable-cli --disable-asm
-make -j${nproc}
+cd $WORKSPACE/srcdir/nasm-2.14.02/
+./configure --prefix=$prefix --host=$target
+make
 make install
-
 """
 
 # These are the platforms we will build for by default, unless further
@@ -47,7 +45,7 @@ platforms = [
 
 # The products that we will ensure are always built
 products(prefix) = [
-    LibraryProduct(prefix, "libx264", :libx264)
+    LibraryProduct(prefix, "nasm", :nasm)
 ]
 
 # Dependencies that must be installed before this package can be built
