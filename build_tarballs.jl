@@ -31,8 +31,10 @@ platforms = [
     Linux(:i686, :glibc),
     Linux(:x86_64, :glibc),
     Linux(:aarch64, :glibc),
-    Linux(:armv7l, :glibc),
+    Linux(:armv7l, :glibc, :eabihf),
     Linux(:powerpc64le, :glibc),
+    Linux(:aarch64, :musl),
+    Linux(:armv7l, :musl, :eabihf),
 
     # musl
     Linux(:i686, :musl),
