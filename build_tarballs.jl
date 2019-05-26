@@ -3,7 +3,7 @@
 using BinaryBuilder
 
 name = "nasmBuilder"
-version = v"nasm-2.14.02"
+version = v"2.14.02"
 
 # Collection of sources required to build x264Builder
 sources = [
