@@ -31,5 +31,5 @@ deploy:
   file: products/*
   skip_cleanup: true
   on:
-    repo: ianshmean/nasmBuilder
-    branch: master
+    repo: JuliaIO/nasmBuilder
+    branch: test

@@ -5,7 +5,7 @@ using BinaryBuilder
 name = "nasmBuilder"
 version = v"2.14.02"
 
-# Collection of sources required to build x264Builder
+# Collection of sources required to build nasm
 sources = [
     "http://www.nasm.us/pub/nasm/releasebuilds/2.14.02/nasm-2.14.02.tar.xz" =>
     "e24ade3e928f7253aa8c14aa44726d1edf3f98643f87c9d72ec1df44b26be8f5",
@@ -15,7 +15,7 @@ sources = [
 # Bash recipe for building across all platforms
 script = raw"""
 cd $WORKSPACE/srcdir/nasm-2.14.02/
-./configure --prefix=$prefix --host=$target
+./configure --prefix=$prefix --host=x86_64-linux-musl
 make
 make install
 """
